@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Whimsy Wisteria — A Quiet Garden Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main id="game">
+      <button class="audio-toggle" id="audio-toggle" type="button" aria-pressed="false">
+        &#9834; Music off
+      </button>
+      <audio id="theme" loop preload="none">
+        <source src="assets/audio/theme.mp3" type="audio/mpeg" />
+      </audio>
+
+      <!-- ============ INTRO ============ -->
+      <section class="scene" id="scene-intro" aria-label="Introduction">
+        <div class="atmosphere" aria-hidden="true"></div>
+        <div class="wisteria-top" aria-hidden="true"></div>
+        <img
+          class="character"
+          id="intro-character"
+          src="assets/characters/character.png"
+          alt="Wisteria, the gentle keeper of the garden"
+        />
+        <div class="dialogue" id="intro-dialogue">
+          <p class="dialogue__name">Wisteria</p>
+          <p class="dialogue__text" id="intro-text" aria-live="polite"></p>
+          <div class="dialogue__action" id="intro-action">
+            <button class="btn" id="intro-btn" type="button">Take me to the garden</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GARDEN ============ -->
+      <section class="scene" id="scene-garden" aria-label="The garden">
+        <div class="garden-bg" aria-hidden="true"></div>
+        <div id="letter-mount"></div>
+        <div id="flower-field"></div>
+        <p class="pick-message" id="pick-message" aria-live="polite"></p>
+        <aside class="bouquet-panel" id="bouquet-panel" aria-label="Your bouquet" hidden>
+          <p class="bouquet-panel__title">Your Bouquet</p>
+          <div class="bouquet-stage">
+            <div class="bouquet-stage__wrap" id="bouquet-stage"></div>
+          </div>
+          <p class="bouquet-count" id="bouquet-count"></p>
+          <div class="bouquet-actions">
+            <button class="btn btn--ghost" id="start-over" type="button">Start over</button>
+            <button class="btn" id="done-btn" type="button" disabled>Done?</button>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ============ RESPONSE ============ -->
+      <section class="scene" id="scene-response" aria-label="Wisteria's response">
+        <div class="atmosphere" aria-hidden="true"></div>
+        <div class="wisteria-top" aria-hidden="true"></div>
+        <img
+          class="character"
+          src="assets/characters/character.png"
+          alt="Wisteria, holding your bouquet"
+        />
+        <div class="response-bouquet" id="response-bouquet" aria-hidden="true"></div>
+        <div class="dialogue right" id="response-dialogue">
+          <p class="dialogue__name">Wisteria</p>
+          <p class="dialogue__text" id="response-text" aria-live="polite"></p>
+          <div class="dialogue__action" id="response-action">
+            <button class="btn" id="response-btn" type="button">Next letter?</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ENDING ============ -->
+      <section class="scene" id="scene-ending" aria-label="Ending">
+        <div class="atmosphere" aria-hidden="true"></div>
+        <div class="wisteria-top" aria-hidden="true"></div>
+        <h1 class="ending-title">Whimsy Wisteria</h1>
+        <img
+          class="character"
+          src="assets/characters/character.png"
+          alt="Wisteria, in the quiet garden"
+        />
+        <div class="dialogue" id="ending-dialogue">
+          <p class="dialogue__name">Wisteria</p>
+          <p class="dialogue__text" id="ending-text" aria-live="polite"></p>
+          <div class="dialogue__action" id="ending-action">
+            <button class="btn" id="ending-btn" type="button">Visit again</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cinematic transition overlay -->
+      <div class="wisteria-zoom" id="wisteria-zoom" aria-hidden="true"></div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
